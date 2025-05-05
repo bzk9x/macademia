@@ -1,1 +1,1 @@
-"# macademia" 
+# macademia

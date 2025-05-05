@@ -1,0 +1,97 @@
+html, body {
+    margin: 0;
+    color: 0;
+    color: #f1f2f3;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home_background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #E19898, #A2678A, #4D3C77, #3F1D38);
+    position: absolute;
+    z-index: -1;
+}
+
+.home_background_blur_mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #191825a4;
+    backdrop-filter: blur(250px);
+    z-index: -1;
+}
+
+.home_titlebar {
+    padding: 0.5% 1%;
+    display: flex;
+    align-items: center;
+}
+
+.home_titlebar_label_icon {
+    width: 18px;
+    height: 18px;
+}
+
+.home_titlebar_drag_area {
+    flex: 1;
+    app-region: drag;
+}
+
+.home_titlebar_window_controls {
+    display: flex;
+    gap: 10px;
+}
+
+.home_titlebar_window_controls_control {
+    width: 16px;
+    height: 16px;
+    background-color: #decfcf;
+    border-radius: 50%;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.home_titlebar_window_controls_control:hover {
+    opacity: 0.5;
+}
+
+.home_titlebar_window_controls_control:active {
+    filter: blur(1px);
+}
+
+.home_titlebar_window_controls_control_close {
+    background-color: #E19898;
+}
+
+.home_body {
+    flex: 1;
+    display: flex;
+    padding: 0 1% 1% 1%;
+}
+
+.home_body_side_bar {
+    flex: 1;
+}
+
+.home_body_main_area {
+    flex: 3;
+}
+
+.home_body_main_area_view {
+    width: 100%;
+    height: 100%;
+    background-color: #474556a4;
+    backdrop-filter: blur(250px);
+    border-radius: 8px;
+    box-shadow: 0 0 10px #191825a4;
+}

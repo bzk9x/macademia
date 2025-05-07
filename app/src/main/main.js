@@ -1,10 +1,10 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: 1300,
+    height: 750,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
@@ -13,6 +13,23 @@ function createWindow() {
   })
 
   win.loadFile('app/src/main/res/layout/screen_home.html')
+
+  // Window control handlers
+  ipcMain.on('minimize-window', () => {
+    win.minimize()
+  })
+
+  ipcMain.on('maximize-window', () => {
+    if (win.isMaximized()) {
+      win.restore()
+    } else {
+      win.maximize()
+    }
+  })
+
+  ipcMain.on('close-window', () => {
+    win.close()
+  })
 }
 
 app.whenReady().then(() => {

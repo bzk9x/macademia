@@ -5,6 +5,8 @@ html, body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100%;
     height: 100%;
+    user-select: none;
+    overflow: hidden;
 }
 
 main {
@@ -12,6 +14,10 @@ main {
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+img {
+    pointer-events: none;
 }
 
 .home_background {
@@ -26,8 +32,8 @@ main {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: #191825a4;
-    backdrop-filter: blur(250px);
+    background-color: #191825e9;
+    backdrop-filter: blur(25px);
     z-index: -1;
 }
 
@@ -38,8 +44,8 @@ main {
 }
 
 .home_titlebar_label_icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
 }
 
 .home_titlebar_drag_area {
@@ -81,10 +87,11 @@ main {
 
 .home_body_side_bar {
     flex: 1;
+    padding: 0 1% 0 0;
 }
 
 .home_body_main_area {
-    flex: 3;
+    flex: 4.3;
 }
 
 .home_body_main_area_view {
@@ -94,4 +101,162 @@ main {
     backdrop-filter: blur(250px);
     border-radius: 8px;
     box-shadow: 0 0 10px #191825a4;
+}
+
+.home_body_side_bar_tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.home_body_side_bar_tabs_tab {
+    flex: 1;
+    height: 50px;
+    background-color: #474556a4;
+    box-shadow: 0 0 10px #191825a4;
+    border-radius: 6px;
+    transition: 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_body_side_bar_tabs_tab:hover {
+    background-color: #5f5d6ea4;
+}
+
+.home_body_side_bar_tabs_tab:active {
+    filter: blur(1px);
+}
+
+.home_body_side_bar_tabs_tab_icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+}
+
+.home_body_calculator {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-color: #191825c5;
+    backdrop-filter: blur(25px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    box-shadow: 0 0 10px #191825a4;
+    border-radius: 26px;
+    padding: 20px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s ease-out;
+    filter: blur(25px);
+}
+
+.home_body_calculator.active {
+    transform: translate(-50%, -50%);
+    filter: blur(0);
+}
+
+.home_body_calculator_inputs_tools_tool_icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+}
+
+.home_body_calculator_inputs_tools {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.home_body_calculator_result {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.calc_input {
+    width: 300px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #f1f2f3;
+    text-align: end;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.home_body_calculator_result_input {
+    font-size: 2em;
+}
+
+.home_body_calculator_result_display {
+    font-size: 1.2em;
+    opacity: 0.5;
+}
+
+.home_body_calculator_inputs_tools_tool {
+    cursor: pointer;
+    display: grid;
+    padding: 5px;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.home_body_calculator_inputs_tools_tool:hover {
+    background-color: #474556a4;
+}
+
+.home_body_calculator_inputs_tools_tool:active {
+    filter: blur(1px);
+}
+
+.home_body_calculator_inputs_numbers_row_button {
+    background-color: #474556;
+    border: none;
+    flex: 1;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    color: #f1f2f3;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.home_body_calculator_inputs_numbers_row_button:hover {
+    background-color: #6d6b7a;
+}
+
+.home_body_calculator_inputs_numbers_row_button:active {
+    scale: 0.9;
+}
+
+.home_body_calculator_inputs_numbers_row {
+    display: flex;
+    gap: 10px;
+}
+
+.home_body_calculator_inputs_numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: #292835;
+    padding: 10px;
+    border-radius: 21px;
+}
+
+.home_body_calculator_inputs_numbers_row_button_clear {
+    color: #E19898;
+}
+
+.home_body_calculator_inputs_numbers_row_button_equals {
+    background-color: #E19898;
+    color: #292835;
+}
+
+.home_body_calculator_inputs_numbers_row_button_equals:hover {
+    background-color: #f3b2b2;
 }

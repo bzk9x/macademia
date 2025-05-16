@@ -1,0 +1,19 @@
+:root {
+    /* Dark mode text and backgrounds */
+    --color-text: #f5f5f7;
+    --color-background: #1a1a1a;
+    --color-white: #2c2c2c;
+    
+    /* Dark mode grayscale */
+    --color-gray-100: #3d3d3d;
+    --color-gray-200: #333333;
+    --color-gray-300: #292929;
+    --color-gray-400: #242424;
+    
+    /* Dark mode accent colors - slightly adjusted for better visibility */
+    --color-red: #ff6666;
+    --color-red-light: #ff8080;
+    --color-red-hover: #ff9999;
+    --shadow-light: rgba(0, 0, 0, 0.25);
+    --shadow-medium: #00000040;
+}

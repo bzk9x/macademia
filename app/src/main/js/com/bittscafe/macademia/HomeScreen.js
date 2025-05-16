@@ -370,3 +370,5 @@ class Calculator {
 document.addEventListener('DOMContentLoaded', () => {
     new Calculator();
 });
+
+// too lazy to code today

@@ -1,7 +1,8 @@
+
+
 html, body {
     margin: 0;
-    color: 0;
-    color: #f1f2f3;
+    color: var(--color-text);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100%;
     height: 100%;
@@ -23,7 +24,7 @@ img {
 .home_background {
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #E19898, #A2678A, #4D3C77, #3F1D38);
+    background: var(--color-background);
     position: absolute;
     z-index: -1;
 }
@@ -32,8 +33,6 @@ img {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: #191825e9;
-    backdrop-filter: blur(25px);
     z-index: -1;
 }
 
@@ -44,8 +43,9 @@ img {
 }
 
 .home_titlebar_label_icon {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
+    image-rendering: crisp-edges;
 }
 
 .home_titlebar_drag_area {
@@ -61,7 +61,7 @@ img {
 .home_titlebar_window_controls_control {
     width: 16px;
     height: 16px;
-    background-color: #decfcf;
+    background-color: var(--color-gray-100);
     border-radius: 50%;
     transition: 0.2s ease;
     cursor: pointer;
@@ -76,7 +76,7 @@ img {
 }
 
 .home_titlebar_window_controls_control_close {
-    background-color: #E19898;
+    background-color: var(--color-red);
 }
 
 .home_body {
@@ -97,10 +97,12 @@ img {
 .home_body_main_area_view {
     width: 100%;
     height: 100%;
-    background-color: #474556a4;
+    background-color: var(--color-white);
     backdrop-filter: blur(250px);
     border-radius: 8px;
-    box-shadow: 0 0 10px #191825a4;
+    box-shadow: 0 0 20px var(--shadow-medium);
+    overflow: hidden;
+    display: flex;
 }
 
 .home_body_side_bar_tabs {
@@ -111,8 +113,7 @@ img {
 .home_body_side_bar_tabs_tab {
     flex: 1;
     height: 50px;
-    background-color: #474556a4;
-    box-shadow: 0 0 10px #191825a4;
+    background-color: var(--color-gray-300);
     border-radius: 6px;
     transition: 0.2s ease;
     cursor: pointer;
@@ -122,7 +123,7 @@ img {
 }
 
 .home_body_side_bar_tabs_tab:hover {
-    background-color: #5f5d6ea4;
+    background-color: var(--color-gray-200);
 }
 
 .home_body_side_bar_tabs_tab:active {
@@ -139,24 +140,24 @@ img {
     position: absolute;
     width: fit-content;
     height: fit-content;
-    background-color: #191825c5;
+    background-color: var(--color-white);
     backdrop-filter: blur(25px);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 100%);
-    box-shadow: 0 0 10px #191825a4;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 12px var(--shadow-light);
     border-radius: 26px;
     padding: 20px 10px 10px 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     transition: 0.2s ease-out;
-    filter: blur(25px);
+    border: 1px solid var(--color-gray-100);
+    display: none;
 }
 
 .home_body_calculator.active {
-    transform: translate(-50%, -50%);
-    filter: blur(0);
+    display: block;
 }
 
 .home_body_calculator_inputs_tools_tool_icon {
@@ -182,7 +183,7 @@ img {
     background-color: transparent;
     border: none;
     outline: none;
-    color: #f1f2f3;
+    color: var(--color-text);
     text-align: end;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -205,7 +206,7 @@ img {
 }
 
 .home_body_calculator_inputs_tools_tool:hover {
-    background-color: #474556a4;
+    background-color: var(--color-gray-400);
 }
 
 .home_body_calculator_inputs_tools_tool:active {
@@ -213,20 +214,18 @@ img {
 }
 
 .home_body_calculator_inputs_numbers_row_button {
-    background-color: #474556;
+    background-color: var(--color-gray-300);
     border: none;
     flex: 1;
     aspect-ratio: 1;
     border-radius: 16px;
-    color: #f1f2f3;
+    color: var(--color-white);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.2em;
-    cursor: pointer;
-    transition: 0.2s ease;
 }
 
 .home_body_calculator_inputs_numbers_row_button:hover {
-    background-color: #6d6b7a;
+    background-color: var(--color-gray-400);
 }
 
 .home_body_calculator_inputs_numbers_row_button:active {
@@ -243,20 +242,100 @@ img {
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
-    background-color: #292835;
+    background-color: var(--color-background);
     padding: 10px;
     border-radius: 21px;
 }
 
+.home_body_calculator_inputs_numbers_row_button {
+    background-color: var(--color-white);
+    border: none;
+    flex: 1;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2em;
+    box-shadow: 0 1px 3px var(--shadow-light);
+}
+
+.home_body_calculator_inputs_numbers_row_button:hover {
+    background-color: var(--color-gray-400);
+}
+
+.home_body_calculator_inputs_numbers_row_button:hover {
+    background-color: var(--color-gray-400);
+}
+
 .home_body_calculator_inputs_numbers_row_button_clear {
-    color: #E19898;
+    color: var(--color-red);
 }
 
 .home_body_calculator_inputs_numbers_row_button_equals {
-    background-color: #E19898;
-    color: #292835;
+    background-color: var(--color-blue);
+    color: var(--color-white);
 }
 
 .home_body_calculator_inputs_numbers_row_button_equals:hover {
-    background-color: #f3b2b2;
+    background-color: var(--color-blue-hover);
+}
+
+.home_body_calculator_inputs_numbers_row_button:active {
+    scale: 0.9;
+}
+
+.home_body_calculator_inputs_numbers_row {
+    display: flex;
+    gap: 10px;
+}
+
+.home_body_calculator_inputs_numbers_row_button_clear {
+    color: var(--color-red-light);
+}
+
+.home_body_calculator_inputs_numbers_row_button_equals {
+    background-color: var(--color-red-light);
+    color: var(--color-text);
+}
+
+.home_body_calculator_inputs_numbers_row_button_equals:hover {
+    background-color: var(--color-red-hover);
+}
+
+.home_body_side_bar_buttons {
+    margin-top: 10px;
+}
+
+.home_body_side_bar_buttons_new_file_button {
+    width: 100%;
+    background-color: var(--color-gray-300);
+    border-radius: 6px;
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.home_body_side_bar_buttons_new_file_button:hover {
+    background-color: var(--color-gray-200);
+}
+
+.home_body_main_area_view_note {
+    resize: none;
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.025em;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.home_body_main_area_view_note::selection {
+    background-color: var(--color-gray-100);
+    border-radius: 8px;
 }

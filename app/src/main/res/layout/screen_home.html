@@ -13,30 +13,33 @@
         
         <nav class="home_titlebar">
             <div class="home_titlebar_label">
-                <img src="../images/macademia_icon_outline.svg" class="home_titlebar_label_icon">
+                <img src="../images/mac_mono.svg" class="home_titlebar_label_icon">
             </div>
             <div class="home_titlebar_buttons"></div>
             <div class="home_titlebar_drag_area">‎ </div>
             <div class="home_titlebar_window_controls">
-                <div class="home_titlebar_window_controls_control" id="utilWindowControlMinimize"></div>
-                <div class="home_titlebar_window_controls_control" id="utilWindowControlMaxmimize"></div>
-                <div class="home_titlebar_window_controls_control home_titlebar_window_controls_control_close" id="utilWindowControlClose"></div>
+                <div class="home_titlebar_window_controls_control" id="utilWindowControlMinimize" title="Minimize"></div>
+                <div class="home_titlebar_window_controls_control" id="utilWindowControlMaxmimize" title="Toggle full window"></div>
+                <div class="home_titlebar_window_controls_control home_titlebar_window_controls_control_close" id="utilWindowControlClose" title="Close Macademia"></div>
             </div>
         </nav>
         <div class="home_body">
             <div class="home_body_side_bar">
                 <div class="home_body_side_bar_tabs">
-                    <div class="home_body_side_bar_tabs_tab" id="toggle_calc">
+                    <div class="home_body_side_bar_tabs_tab" id="toggle_calc" title="Calculator">
                         <img src="../images/ic_calc.png" class="home_body_side_bar_tabs_tab_icon">
                     </div>
                     <div class="home_body_side_bar_tabs_tab">
                         <img src="../images/ic_timer.png" class="home_body_side_bar_tabs_tab_icon">
                     </div>
                 </div>
+                <div class="home_body_side_bar_buttons">
+                    <button class="home_body_side_bar_buttons_new_file_button">New Note</button>
+                </div>
             </div>
             <div class="home_body_main_area">
                 <div class="home_body_main_area_view">
-
+                    <textarea name="note" id="note" class="home_body_main_area_view_note" spellcheck="false"></textarea>
                 </div>
             </div>
             <div class="home_body_calculator" id="calculator">
@@ -89,9 +92,16 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="home_body_new_file">
+                <div>
+                    
+                </div>
+                <div></div>
+            </div> -->
         </div>
     </main>
     <script src="../../js/com/bittscafe/macademia/HomeScreen.js"></script>
     <script src="../../js/com/bittscafe/macademia/utils/WindowControls.js"></script>
+    <script src="../../js/com/bittscafe/macademia/utils/ThemeControler.js"></script>
 </body>
 </html>
